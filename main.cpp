@@ -2,6 +2,11 @@
 
 using namespace std;
 
+int sum(int a, int b)
+{
+   return a + b;
+}
+
 int fact(int n)
 {
    int product = 1;
@@ -20,6 +25,8 @@ int main()
    {
       cout << "factorial of " << i << " -> " << fact(i) << endl;
    }
+
+   cout << "sum of 3 and 5 -> " << sum(3, 5) << endl;
 
    return 0;
 }
