@@ -2,31 +2,26 @@
 
 using namespace std;
 
-int sum(int a, int b)
+class Player
 {
-   return a + b;
-}
+public:
+   int x, y;
 
-int fact(int n)
-{
-   int product = 1;
-   for (int i = 1; i <= n; i++)
+   int speed;
+
+   void Move(int xa, int ya)
    {
-      product *= i;
+      x += xa + speed;
+      y += ya + speed;
    }
-
-   return product;
-}
+};
 
 int main()
 {
-   int finish = 10;
-   for (int i = 0; i < finish; i++)
-   {
-      cout << "factorial of " << i << " -> " << fact(i) << endl;
-   }
 
-   cout << "sum of 3 and 5 -> " << sum(3, 5) << endl;
+   Player player;
+   player.x = 20;
+   player.y = 20;
 
    return 0;
 }
