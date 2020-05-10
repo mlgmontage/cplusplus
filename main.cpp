@@ -2,31 +2,23 @@
 
 using namespace std;
 
-int sum(int a, int b)
+int multi(int a, int b)
 {
-   return a + b;
-}
-
-int fact(int n)
-{
-   int product = 1;
-   for (int i = 1; i <= n; i++)
-   {
-      product *= i;
-   }
-
-   return product;
+   return a * b;
 }
 
 int main()
 {
-   int finish = 10;
-   for (int i = 0; i < finish; i++)
+   int i = 0;
+   bool condition = true;
+   for (; condition;)
    {
-      cout << "factorial of " << i << " -> " << fact(i) << endl;
+      cout << i << endl;
+      i++;
+      if (!(i < 5))
+      {
+         condition = false;
+      }
    }
-
-   cout << "sum of 3 and 5 -> " << sum(3, 5) << endl;
-
    return 0;
 }
