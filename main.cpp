@@ -1,32 +1,41 @@
 #include <iostream>
 
-using namespace std;
-
-int sum(int a, int b)
+class Log
 {
-   return a + b;
-}
+public:
+   const int LogLevelError = 0;
+   const int LogLevelWarning = 1;
+   const int LogLevelInfo = 2;
 
-int fact(int n)
-{
-   int product = 1;
-   for (int i = 1; i <= n; i++)
+private:
+   int m_LogLevel = LogLevelInfo;
+
+public:
+   void SetLevel(int level)
    {
-      product *= i;
+      m_LogLevel = level;
+   }
+   void Info(const char *message)
+   {
+      std::cout << "[INFO]: " << message << std::endl;
    }
 
-   return product;
-}
+   void Error(const char *message)
+   {
+      std::cout << "[ERROR]: " << message << std::endl;
+   }
+
+   void Warn(const char *message)
+   {
+      std::cout << "[WARNING]: " << message << std::endl;
+   }
+};
 
 int main()
 {
-   int finish = 10;
-   for (int i = 0; i < finish; i++)
-   {
-      cout << "factorial of " << i << " -> " << fact(i) << endl;
-   }
-
-   cout << "sum of 3 and 5 -> " << sum(3, 5) << endl;
+   Log log;
+   log.SetLevel(log.LogLevelInfo);
+   log.Warn("Hello, world");
 
    return 0;
 }
