@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class Player
+struct Player
 {
 public:
    int x, y;
@@ -23,5 +23,6 @@ int main()
    player.x = 20;
    player.y = 20;
 
+   cout << player.x << endl;
    return 0;
 }
