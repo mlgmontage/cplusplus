@@ -2,31 +2,28 @@
 
 using namespace std;
 
-int sum(int a, int b)
+struct Entity
 {
-   return a + b;
-}
-
-int fact(int n)
-{
-   int product = 1;
-   for (int i = 1; i <= n; i++)
+   static int x, y;
+   
+   void Print()
    {
-      product *= i;
+      std::cout << x << ", " << y << std::endl;
    }
+};
 
-   return product;
-}
+int Entity::x;
+int Entity::y;
+
 
 int main()
 {
-   int finish = 10;
-   for (int i = 0; i < finish; i++)
-   {
-      cout << "factorial of " << i << " -> " << fact(i) << endl;
-   }
+   Entity e;
+   e.x = 2;
+   e.y = 3;
 
-   cout << "sum of 3 and 5 -> " << sum(3, 5) << endl;
+
+   e.Print();
 
    return 0;
 }
